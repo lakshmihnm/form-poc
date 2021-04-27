@@ -49,20 +49,38 @@ const Small = styled.small`
 
 function App() {
   const [flag, setFlag] = useState(false);
-  // const [age, seAge] = useState(0);
-  // const [dob, setDob] = useState(null);
+  const formData = [
+    {
+      type: "text",
+      id: "labelName",
+      name: "name",
+      placeholder: "Enter Name",
+      ariaLabel: "Please enter name",
+      label: "Name",
+    },
+    {
+      type: "number",
+      id: "labelNumber",
+      name: "phone",
+      placeholder: "Enter contact Number",
+      ariaLabel: "Please enter contact number",
+      label: "Contact",
+    },
+    {
+      type: "date",
+      id: "labelDate",
+      name: "doj",
+      placeholder: "Enter DOJ",
+      ariaLabel: "Please enter DOJ",
+      label: "DOJ",
+    },
+  ];
 
-  // const handleChange = (e,id) => {
-  //   switch(id){
-  //     case 'text':
-  //       setName(e.target.name);
-  //   }
-  // };
   const handleSubmision = () => {
     console.log("No errors");
     setTimeout(() => {
       setFlag(true);
-    }, 5000);
+    }, 2000);
   };
 
   useEffect(() => {
@@ -84,53 +102,32 @@ function App() {
       <Form>
         {/* <h3>Details</h3> */}
 
-        <div className="form-group">
-          <label>Name</label>
-          <input
-            type="text"
-            className="form-control"
-            name="name"
-            placeholder="Enter Name"
-            onChange={handleChange}
-          />
-          {errors.name && (
-            <p>
-              <Small>{errors.name}</Small>
-            </p>
-          )}
-        </div>
-
-        <div className="form-group">
-          <label>Contact Number</label>
-          <input
-            type="number"
-            className="form-control"
-            name="phone"
-            placeholder="Enter Phone number"
-            onChange={handleChange}
-          />
-          {errors.phone && (
-            <p>
-              <Small>{errors.phone}</Small>
-            </p>
-          )}
-        </div>
-
-        <div className="form-group">
-          <label>DOJ</label>
-          <input
-            type="date"
-            className="form-control"
-            name="doj"
-            placeholder="Enter DOJ"
-            onChange={handleChange}
-          />
-          {errors.name && (
-            <p>
-              <Small>{errors.doj}</Small>
-            </p>
-          )}
-        </div>
+        {formData.map((data) => {
+          const { name, id, ariaLabel, placeholder, type, label } = data;
+          return (
+            <div className="form-group" key={id}>
+              <label htmlFor={name} id={id} aria-label={ariaLabel}>
+                {label}
+              </label>
+              <input
+                type={type}
+                className="form-control"
+                name={name}
+                id={name}
+                placeholder={placeholder}
+                onChange={handleChange}
+                aria-labelledby={id}
+                data-testid={id}
+                required
+              />
+              {errors[name] && (
+                <p>
+                  <Small data-testid={errors[name]}>{errors[name]}</Small>
+                </p>
+              )}
+            </div>
+          );
+        })}
 
         <button
           type="submit"
