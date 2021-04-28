@@ -91,7 +91,7 @@ function App() {
     };
   });
 
-  const { values, errors, handleChange, handleSubmit } = useForm(
+  const { values, errors, handleChange, handleSubmit,isSubmitting } = useForm(
     handleSubmision,
     validate
   );
@@ -122,7 +122,7 @@ function App() {
               />
               {errors[name] && (
                 <p>
-                  <Small data-testid={errors[name]}>{errors[name]}</Small>
+                  <Small data-testid={`error-${name}`}>{errors[name]}</Small>
                 </p>
               )}
             </div>
@@ -130,7 +130,8 @@ function App() {
         })}
 
         <button
-          type="submit"
+          name="submit"
+          aria-role="button"
           onClick={handleSubmit}
           className="btn btn-dark btn-lg btn-block"
         >

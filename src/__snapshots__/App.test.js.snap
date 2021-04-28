@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-dkPtyc dZVVTd"
+  >
+    <h3
+      class="sc-hKwCoD hjtCOr"
+    >
+      Employee Details Form
+    </h3>
+    <form
+      class="sc-bdvvaa bvxtZM"
+    >
+      <div
+        class="form-group"
+      >
+        <label
+          aria-label="Please enter name"
+          for="name"
+          id="labelName"
+        >
+          Name
+        </label>
+        <input
+          aria-labelledby="labelName"
+          class="form-control"
+          data-testid="labelName"
+          id="name"
+          name="name"
+          placeholder="Enter Name"
+          required=""
+          type="text"
+        />
+      </div>
+      <div
+        class="form-group"
+      >
+        <label
+          aria-label="Please enter contact number"
+          for="phone"
+          id="labelNumber"
+        >
+          Contact
+        </label>
+        <input
+          aria-labelledby="labelNumber"
+          class="form-control"
+          data-testid="labelNumber"
+          id="phone"
+          name="phone"
+          placeholder="Enter contact Number"
+          required=""
+          type="number"
+        />
+      </div>
+      <div
+        class="form-group"
+      >
+        <label
+          aria-label="Please enter DOJ"
+          for="doj"
+          id="labelDate"
+        >
+          DOJ
+        </label>
+        <input
+          aria-labelledby="labelDate"
+          class="form-control"
+          data-testid="labelDate"
+          id="doj"
+          name="doj"
+          placeholder="Enter DOJ"
+          required=""
+          type="date"
+        />
+      </div>
+      <button
+        class="btn btn-dark btn-lg btn-block"
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;
