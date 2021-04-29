@@ -4,8 +4,8 @@ import styled from "styled-components";
 import MockData from "../../../constants/mockData";
 import useForm from "../../../hooks/useForm";
 import React, { useState, useEffect } from "react";
-import validate from '../../../utils/formValidations';
-import {FORMHEADER, SUCCESSMESSAGE} from '../../../constants/constants';
+import validate from "../../../utils/formValidations";
+import { FORMHEADER, SUCCESSMESSAGE } from "../../../constants/constants";
 
 const Form = styled.form`
   display: flex;
@@ -36,9 +36,9 @@ const SuccessDiv = styled.header`
 `;
 
 const FormContainer = (props) => {
-    const [flag, setFlag] = useState(false);
+  const [flag, setFlag] = useState(false);
   const formData = MockData;
-    console.log("formdata:", MockData);
+  console.log("formdata:", MockData);
   const handleSubmision = () => {
     console.log("No errors");
     setTimeout(() => {
@@ -63,13 +63,14 @@ const FormContainer = (props) => {
       {flag && <SuccessDiv>{SUCCESSMESSAGE}</SuccessDiv>}
       <Form>
         {formData.mockData.map((data) => {
-            return(
-          <InputElement
-            inputData={data}
-            handleChange={handleChange}
-            errorData={errors}
-            key={data.id}
-          />);
+          return (
+            <InputElement
+              inputData={data}
+              handleChange={handleChange}
+              errorData={errors}
+              key={data.id}
+            />
+          );
         })}
         <Button handleSubmit={handleSubmit} />
       </Form>

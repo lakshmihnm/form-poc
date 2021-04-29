@@ -7,15 +7,14 @@ const Small = styled.small`
 `;
 
 const ErrorMessage = (props) => {
-    const {errorMessage} = props;
-    // console.log("errormessage", props);
-    return(
-    
-        <p>
-            <Small data-testid={errorMessage} id={errorMessage} aria-invalid>{errorMessage}</Small>
-        </p>
-        
-    )
-}
+  const { errorMessage } = props;
+  return (
+    <p>
+      <Small data-testid={errorMessage} id={errorMessage} aria-invalid>
+        {errorMessage}
+      </Small>
+    </p>
+  );
+};
 
 export default ErrorMessage;
