@@ -14,7 +14,7 @@ const Div = styled.div`
 
 function App() {
   return (
-    <Div>
+    <Div lang="en">
       <FormContainer />
     </Div>
   );

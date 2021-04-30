@@ -1,19 +1,16 @@
 import styled from "styled-components";
 
-const Small = styled.small`
+const P = styled.p`
   color: #db2269;
   font-size: 0.8em;
   display: relative;
 `;
 
-const ErrorMessage = (props) => {
-  const { errorMessage } = props;
+const ErrorMessage = ({ errorMessage, id }) => {
   return (
-    <p>
-      <Small data-testid={errorMessage} id={errorMessage} aria-invalid>
-        {errorMessage}
-      </Small>
-    </p>
+    <P data-testid={errorMessage} id={id}>
+      {errorMessage}
+    </P>
   );
 };
 

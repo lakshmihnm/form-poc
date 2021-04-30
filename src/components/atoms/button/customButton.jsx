@@ -1,14 +1,14 @@
-
-const Button = (props) => {
-    const {handleSubmit} = props
-    return(
-        <button
-        name="submit"
-        // aria-role="button"
-        onClick={handleSubmit}
-        className="btn btn-dark btn-lg btn-block"
-      >Submit </button>
-    )
-}
+const Button = ({ handleSubmit, children }) => {
+  return (
+    <button
+      name="submit"
+      type="submit"
+      onClick={handleSubmit}
+      className="btn btn-dark btn-lg btn-block"
+    >
+      {children}{" "}
+    </button>
+  );
+};
 
 export default Button;

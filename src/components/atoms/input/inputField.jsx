@@ -2,7 +2,7 @@ const InputField = (props) => {
   const { name, id, ariaLabel, placeholder, type, label } = props.inputData;
   return (
     <div className="form-group">
-      <label htmlFor={name} id={id} aria-label={ariaLabel}>
+      <label htmlFor={name} id={id}>
         {label}
       </label>
       <input
@@ -15,7 +15,7 @@ const InputField = (props) => {
         aria-labelledby={id}
         data-testid={id}
         required
-        aria-describedby={`error-${name}`}
+        // aria-describedby={`error-${name}`}
       />
     </div>
   );

@@ -41,7 +41,7 @@ describe("renders the form correctly", () => {
     expect(nameLabel).toHaveAttribute("type", "text");
   });
 
-  test("pass value to test name input field", () => {
+  it("pass value to test name input field", () => {
     const { getByTestId, queryByTestId } = render(
       <InputField inputData={inputData[0]} />
     );
@@ -66,7 +66,7 @@ describe("renders the form correctly", () => {
 
     const contactLabel = getByLabelText("Contact");
 
-    expect(contactLabel).toHaveAttribute("type", "number");
+    expect(contactLabel).toHaveAttribute("type", "tel");
   });
 
   it("renders the form field DOJ", () => {

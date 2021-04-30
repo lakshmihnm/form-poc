@@ -8,7 +8,10 @@ const InputElement = (props) => {
     <div>
       <InputField inputData={inputData} handleChange={handleChange} />
       {errorData[inputData.name] && (
-        <ErrorMessage errorMessage={errorData[inputData.name]} />
+        <ErrorMessage
+          errorMessage={errorData[inputData.name]}
+          id={inputData.id}
+        />
       )}
     </div>
   );

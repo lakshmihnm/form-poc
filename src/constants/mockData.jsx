@@ -5,15 +5,15 @@ export default { "mockData": [
       "name": "name",
       "placeholder": "Enter Name",
       "ariaLabel": "Please enter name",
-      "label": "Name",
+      "label": "Please enter name",
     },
     {
-      "type": "number",
+      "type": "tel",
       "id": "labelNumber",
       "name": "phone",
       "placeholder": "Enter contact Number",
       "ariaLabel": "Please enter contact number",
-      "label": "Contact",
+      "label": "Please enter contact number",
     },
     {
       "type": "date",
@@ -21,7 +21,7 @@ export default { "mockData": [
       "name": "doj",
       "placeholder": "Enter DOJ",
       "ariaLabel": "Please enter DOJ",
-      "label": "DOJ",
+      "label": "Please enter DOJ",
     }
   ]
 }

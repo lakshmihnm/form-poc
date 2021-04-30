@@ -17,9 +17,10 @@ const Form = styled.form`
   box-shadow: 0px 8px 36px #222;
   background-color: #fefefe;
 `;
-const Header = styled.h3`
+const Header = styled.h1`
   display: flex;
   margin-bottom: 20px;
+  font-size: 20px;
 `;
 const SuccessDiv = styled.header`
   display: flex;
@@ -61,7 +62,7 @@ const FormContainer = (props) => {
     <div>
       <Header>{FORMHEADER}</Header>
       {flag && <SuccessDiv>{SUCCESSMESSAGE}</SuccessDiv>}
-      <Form>
+      <Form method="post">
         {formData.mockData.map((data) => {
           return (
             <InputElement
@@ -72,7 +73,7 @@ const FormContainer = (props) => {
             />
           );
         })}
-        <Button handleSubmit={handleSubmit} />
+        <Button handleSubmit={handleSubmit}>Submit</Button>
       </Form>
     </div>
   );
